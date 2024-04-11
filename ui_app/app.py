@@ -10,6 +10,7 @@ root_dir = os.getcwd()
 model_name = os.path.join(root_dir, 'ui_app/saved_model.sav')
 label_encoder_state_filename = os.path.join(root_dir, 'ui_app/label_encoder_state.pkl')
 label_encoder_sector_filename = os.path.join(root_dir, 'ui_app/label_encoder_sector.pkl')
+accuracy_img_path = os.path.join(root_dir, 'img/accuracy.png')
 
 # load the model instance
 with open(model_name, 'rb') as file:
@@ -56,7 +57,7 @@ if (selected == 'Predict Price'):
     col1, col2 = st.columns(2)
 
     with col1:
-        year = st.slider('Year', min_value=2010, max_value=2024, value=2020, step=1)
+        year = st.slider('Year', min_value=2024, max_value=2026, value=2024, step=1)
         state_input = st.selectbox("Select State", label_encoder_state.classes_)
         customers = st.number_input('Number of Customers', min_value=0, max_value=50416198, value=500000, step=10000)
     with col2:
@@ -92,11 +93,46 @@ if (selected == 'Predict Price'):
 
         # Make predictions using the loaded model
         prediction = loaded_model.predict(input_data)
-        st.success("The predicted price is ${}".format(round(prediction[0],2)))
+        st.success("The predicted price is {} per kilowatt-hour (kWh) in cents".format(round(prediction[0],2)))
     
 # About page
 if (selected == "About App"):
-    st.header("This is an information about app here")
+    st.header("Energy Price Prediction Project")
 
-    st.markdown('# Markdown') # see #*
-   
+    st.markdown('This project is developed by Ogunsanya James for the Optimus AI Labs Hackathon. The goal of this project is to build a machine learning model and a user interface application for predicting energy prices. The dataset used for training the model was obtained from Kaggle and can be found [here](https://www.kaggle.com/datasets/alistairking/electricity-prices?select=clean_data.csv).') # see #*
+
+    st.markdown('## Overview')
+
+    st.markdown('Energy price prediction is a crucial task for energy companies, policymakers, and consumers alike. Accurate predictions can help optimize energy production and consumption, leading to cost savings and improved resource management. In this project, the aim is to develop a machine learning model that can predict energy prices based on historical data and relevant features.')
+    
+    st.markdown('## Technologies Used')
+
+    st.markdown('- Python for model developement')
+
+    st.markdown('- Random Forest Regressor')
+
+    st.markdown('- Streamlit for the UI')
+
+    st.markdown('[Link to github repository](https://github.com/Oyindamolajames/Energy_Price_Prediction)')
+
+    st.markdown('## Model Accuracy')
+
+    st.image(accuracy_img_path, use_column_width=True)
+
+    st.markdown('## Acknowledgments')
+
+    st.markdown('- [Alistair King](https://www.kaggle.com/alistairking) for providing the dataset on Kaggle.')
+
+    st.markdown('- Optimus AI Labs for organizing the hackathon.')
+
+    st.markdown('## Author')
+
+    st.markdown('- **Ogunsanya James** - Machine Learning Engineer')
+
+    st.markdown('- [Github](https://www.github.com/oyindamolajames)')
+
+    st.markdown('- [Linkdein](https://www.linkedin.com/in/james-ogunsanya-7088928a/)')
+
+    st.markdown('## Feedback')
+
+    st.markdown('If you have any feedback, please reach out to us at oyindamolajames@gmail.com')    
