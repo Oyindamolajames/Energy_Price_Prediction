@@ -4,7 +4,7 @@
 This project is developed by Ogunsanya James for the Optimus AI Labs Hackathon. The goal of this project is to build a machine learning model and a user interface application for predicting energy prices. The dataset used for training the model was obtained from Kaggle and can be found [here](https://www.kaggle.com/datasets/alistairking/electricity-prices?select=clean_data.csv).
 
 ---
-![Homepage](img/homepage.png)
+![Homepage](./img/homepage.png)
 ---
 
 ## Overview
@@ -22,7 +22,7 @@ Energy price prediction is a crucial task for energy companies, policymakers, an
 - Streamlit for the UI
 
 ## Model Accuracy
-![Homepage](img/accuracy.png)
+![Homepage](./img/accuracy.png)
 
 ## Project Structure
 
