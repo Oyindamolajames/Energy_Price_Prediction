@@ -80,7 +80,7 @@ To set up the project environment and run the application locally, follow these 
 
 ## Demo
 
-Here is the link to the live project [here]()
+Here is the link to the live project [here](https://energypriceprediction-wymvjkehsolfuyhrn6mshy.streamlit.app/)
 
 
 ## Acknowledgments
