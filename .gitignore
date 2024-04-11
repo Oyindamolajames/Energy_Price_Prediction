@@ -1,4 +1,2 @@
 .venv/
 *.pkl
-*.sav
-/ml_model.sav
